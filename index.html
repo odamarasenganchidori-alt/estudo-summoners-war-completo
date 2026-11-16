@@ -15,6 +15,7 @@
   --line:#d8d0bf; --gold:#9a6b12; --gold-soft:#f3e3b3; --teal:#0f6b5c; --teal-soft:#d7ece6;
   --red:#a62b1f; --red-soft:#f6ddd8; --green:#2e6b1e; --green-soft:#e0ecd4;
   --amber:#8a5a00; --amber-soft:#f7e8c8; --chip:#e9e2d2;
+  --el-fire:#b23a2a; --el-water:#2563a8; --el-wind:#3d7a2e; --el-light:#9a6b12; --el-dark:#5b4a8a;
   --hero-bg:#171410; --hero-ink:#f5efe2; --hero-muted:#c9bfa8;
 }
 @media (prefers-color-scheme: dark){
@@ -24,6 +25,7 @@
     --teal:#4fc3ab; --teal-soft:#17332d; --red:#f08575; --red-soft:#3d1e1a;
     --green:#9ccb7a; --green-soft:#22331a; --amber:#e8bc62; --amber-soft:#38300f;
     --chip:#2b2823; --hero-bg:#0c0b09; --hero-ink:#f5efe2; --hero-muted:#c9bfa8;
+    --el-fire:#f08575; --el-water:#7db3e8; --el-wind:#9ccb7a; --el-light:#e0aa3e; --el-dark:#b39ddb;
   }
 }
 *{box-sizing:border-box}
@@ -304,9 +306,14 @@ footer{margin-top:48px;border-top:1px solid var(--line);padding:28px 0 44px;colo
 .classif-group select{padding:9px 12px;border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink);font:inherit;font-size:.92rem;min-height:44px;max-width:100%}
 .classif-summary{font-size:.86rem;color:var(--muted);margin:0 0 10px}
 .classif-summary:empty{display:none}
-.roster-group-head{flex:1 1 100%;display:flex;align-items:baseline;gap:10px;margin:10px 0 1px;padding:7px 12px;background:var(--gold-soft);border:1px solid var(--gold);border-radius:9px;font-family:"Cinzel",serif;font-weight:700;font-size:.95rem;color:var(--ink)}
+.roster-group-head{flex:1 1 100%;width:100%;display:flex;align-items:center;gap:10px;margin:10px 0 1px;padding:9px 12px;background:var(--gold-soft);border:1px solid var(--gold);border-radius:9px;font-family:"Cinzel",serif;font-weight:700;font-size:.95rem;color:var(--ink);cursor:pointer;text-align:left;min-height:48px}
 .roster-group-head:first-child{margin-top:0}
-.roster-group-head span{font-family:inherit;font-weight:400;font-size:.8rem;color:var(--muted)}
+.roster-group-head:hover{border-color:var(--ink)}
+.roster-group-head:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.roster-group-head .chev{font-size:.78rem;color:var(--gold);flex:none;width:13px;text-align:center}
+.roster-group-head .eldot{width:12px;height:12px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.22)}
+.roster-group-head .gcount{font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:400;font-size:.8rem;color:var(--muted)}
+.roster-group-head .gtoggle{margin-left:auto;font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:700;font-size:.78rem;color:var(--gold);flex:none}
 /* TAB FOOTER NAV + IN-TAB JUMPS */
 .tab-footer-nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:28px 0 10px;padding-top:18px;border-top:1px solid var(--line)}
 .tab-nav-btn{appearance:none;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:.9rem;font-weight:700;padding:11px 16px;border-radius:10px;cursor:pointer;min-height:44px;display:inline-flex;align-items:center;gap:8px}
@@ -866,7 +873,7 @@ footer{margin-top:48px;border-top:1px solid var(--line);padding:28px 0 44px;colo
   <div class="builder" id="builder">
     <div class="roster-block">
       <h2 style="margin-top:0">Elenco completo do jogo — qualquer mob serve</h2>
-      <p class="src" style="margin-bottom:12px">Os <strong>1.046 monstros jogáveis</strong> de Summoners War (forma final: despertado — e 2º Despertar quando existe — de cada família e elemento; inclui unidades de colaboração; fora materiais e monstros de chefe/NPC), agrupados em <strong>229 famílias</strong>. Conferido nome a nome contra o bestiário nesta atualização: o único corte são os monstros de <strong>1★ e 2★ que não têm 2º Despertar</strong> (74 no total — Imp, Garuda, Slime, Fantasma e afins, que ninguém usa em comp); <strong>todos os outros estão aqui</strong>, incluindo os de 1★/2★ com 2º Despertar (Harpu, Howl, Pixie, Hellhound, Fada…). A lista mostra <strong>todos os resultados do filtro de uma vez, sem corte</strong> — se um mob não aparecer, é o filtro (busca, elemento, família ou classificação), não a lista. Fonte do elenco e dos retratos: bestiário do <a href="https://swarfarm.com/">SWARFARM</a>, espelho dos dados do jogo, consultado nesta atualização — cada retrato é o ícone oficial daquele monstro (elemento e forma despertada/2A conforme o elenco). E <strong>cada um desses 1.046 mobs tem a própria sinergia</strong> no painel de parceiros abaixo: o papel dele é classificado pelo <strong>tipo do monstro no jogo</strong> (Ataque / HP / Defesa / Suporte — bestiário SWARFARM) cruzado com as regras de sinergia por função, e, quando o nome dele aparece nos <strong>picks reais da Season 39</strong> (duos/trios do Lucksack, Guardian), os parceiros verificados dele aparecem primeiro, com taxa de vitória e nº de jogos. Os 42 mobs do estudo (marcados com ★) têm, além disso, função detalhada mob a mob, tier S39 por rank e os cores verificados do FooSW.</p>
+      <p class="src" style="margin-bottom:12px">Os <strong>1.046 monstros jogáveis</strong> de Summoners War (forma final: despertado — e 2º Despertar quando existe — de cada família e elemento; inclui unidades de colaboração; fora materiais e monstros de chefe/NPC), agrupados em <strong>229 famílias</strong>. Conferido nome a nome contra o bestiário nesta atualização: o único corte são os monstros de <strong>1★ e 2★ que não têm 2º Despertar</strong> (74 no total — Imp, Garuda, Slime, Fantasma e afins, que ninguém usa em comp); <strong>todos os outros estão aqui</strong>, incluindo os de 1★/2★ com 2º Despertar (Harpu, Howl, Pixie, Hellhound, Fada…). A lista vem <strong>organizada por elemento, com cada elemento na sua própria casa</strong> — Fogo, Água, Vento, Luz e Dark, cada uma com os seus monstros juntos: as casas começam <strong>fechadas</strong> para a lista ficar curta, e você toca no título da casa para abrir ou fechar os monstros dela. Com <strong>busca ou qualquer filtro ativo, as casas abrem sozinhas</strong> mostrando todos os resultados, sem corte — se um mob não aparecer, é o filtro (busca, elemento, família ou classificação), não a lista. Fonte do elenco e dos retratos: bestiário do <a href="https://swarfarm.com/">SWARFARM</a>, espelho dos dados do jogo, consultado nesta atualização — cada retrato é o ícone oficial daquele monstro (elemento e forma despertada/2A conforme o elenco). E <strong>cada um desses 1.046 mobs tem a própria sinergia</strong> no painel de parceiros abaixo: o papel dele é classificado pelo <strong>tipo do monstro no jogo</strong> (Ataque / HP / Defesa / Suporte — bestiário SWARFARM) cruzado com as regras de sinergia por função, e, quando o nome dele aparece nos <strong>picks reais da Season 39</strong> (duos/trios do Lucksack, Guardian), os parceiros verificados dele aparecem primeiro, com taxa de vitória e nº de jogos. Os 42 mobs do estudo (marcados com ★) têm, além disso, função detalhada mob a mob, tier S39 por rank e os cores verificados do FooSW.</p>
       <div class="roster-tools">
         <input type="search" id="rosterSearch" placeholder="Buscar no elenco completo… ex.: Lushen, Anavel, Leona" aria-label="Buscar monstro no elenco completo">
         <select id="rosterFam" aria-label="Filtrar por família"><option value="">Todas as famílias (229)</option></select>
@@ -881,7 +888,7 @@ footer{margin-top:48px;border-top:1px solid var(--line);padding:28px 0 44px;colo
       </div>
       <div class="classif-block" id="classifBlock">
         <h4 class="classif-title">Separar por classificação</h4>
-        <p class="src" style="margin:0 0 12px">Separe o elenco pelas classificações do próprio jogo: <strong>tipo</strong> do monstro (Ataque / HP / Defesa / Suporte), <strong>estrelas naturais</strong> (Nat 1★ a Nat 5★) e <strong>destaques</strong> (Luz/Dark, os cobiçados Nat 5★ LD, quem tem 2º Despertar e os ★ detalhados do estudo). Os filtros combinam entre si e com a busca, o elemento e a família acima. Com o campo <strong>“Agrupar a lista por”</strong>, a lista passa a mostrar cada classificação separada pelo seu próprio título — ex.: todos os de Ataque juntos, depois os de HP, e assim por diante.</p>
+        <p class="src" style="margin:0 0 12px">Separe o elenco pelas classificações do próprio jogo: <strong>tipo</strong> do monstro (Ataque / HP / Defesa / Suporte), <strong>estrelas naturais</strong> (Nat 1★ a Nat 5★) e <strong>destaques</strong> (Luz/Dark, os cobiçados Nat 5★ LD, quem tem 2º Despertar e os ★ detalhados do estudo). Os filtros combinam entre si e com a busca, o elemento e a família acima. Por padrão, a lista já vem agrupada <strong>por elemento</strong>: cada elemento é uma casa que abre e fecha no próprio título. Com o campo <strong>“Agrupar a lista por”</strong>, dá pra trocar a casa — por tipo (todos os de Ataque juntos, depois os de HP, e assim por diante) ou por estrelas naturais.</p>
         <div class="classif-row">
           <span class="classif-label" id="clsTypeLabel">Tipo do monstro</span>
           <div class="el-chips cls-chips" role="group" aria-labelledby="clsTypeLabel" id="rosterTypes">
@@ -917,10 +924,10 @@ footer{margin-top:48px;border-top:1px solid var(--line);padding:28px 0 44px;colo
           <span class="classif-label" id="clsGroupLabel">Agrupar a lista por</span>
           <div class="classif-group">
             <select id="rosterGroup" aria-labelledby="clsGroupLabel">
-              <option value="none">Sem agrupamento (ordem das famílias)</option>
+              <option value="el" selected>Elemento — cada elemento na sua casa (Fogo / Água / Vento / Luz / Dark)</option>
               <option value="type">Tipo — Ataque / HP / Defesa / Suporte</option>
               <option value="stars">Estrelas naturais — Nat 5★ → Nat 1★</option>
-              <option value="el">Elemento — Fogo / Água / Vento / Luz / Dark</option>
+              <option value="none">Sem agrupamento (lista única, ordem das famílias)</option>
             </select>
             <button type="button" class="btn-ghost" id="classifClear">Limpar classificações</button>
           </div>
@@ -1960,13 +1967,19 @@ var ROSTER=[["Ceres",0,3,0,0,0],["Ellin",1,3,0,0,0],["Hina",2,3,0,0,0],["Lyn",3,
     var m=BY[key]; return {n:m.n, el:m.el, r:m.r, roster:false, d:m.d, icon:STUDY_ICON[key]};
   }
   var rosterElFilter='all';
-  var rosterTypeFilter='all', rosterStarsFilter='all', rosterFlagFilter='all', rosterGroup='none';
+  var rosterTypeFilter='all', rosterStarsFilter='all', rosterFlagFilter='all', rosterGroup='el';
   var rosterLimit=120;
+  /* Casas do elenco: cada grupo (por padrão, cada elemento) abre e fecha no seu
+     título. Sem busca/filtro as casas começam fechadas — a lista vira só os
+     títulos; com busca ou filtro ativo, abrem sozinhas. O estado tocado pelo
+     usuário fica guardado aqui durante a sessão. */
+  var rosterOpenHouses={};
+  var ELKEYS=['fire','water','wind','light','dark'];
   function studyIdFor(i){ var sid=STUDY_MATCH[i]; if(sid&&STUDY_ICON[sid]!==i) sid=null; return sid; }
   function rosterGroupOf(r){
     if(rosterGroup==='type') return {k:r[4],label:'Tipo: '+ARCHNAMES[r[4]]};
     if(rosterGroup==='stars') return {k:-r[2],label:'Nat '+r[2]+'★ — '+r[2]+' estrelas naturais'};
-    if(rosterGroup==='el') return {k:r[1],label:'Elemento: '+ELNAMES[r[1]]};
+    if(rosterGroup==='el') return {k:r[1],label:ELNAMES[r[1]]};
     return null;
   }
   function renderRoster(){
@@ -1989,8 +2002,10 @@ var ROSTER=[["Ceres",0,3,0,0,0],["Ellin",1,3,0,0,0],["Hina",2,3,0,0,0],["Lyn",3,
     });
     if(rosterGroup!=='none'){
       matches.sort(function(a,b){ return rosterGroupOf(ROSTER[a]).k-rosterGroupOf(ROSTER[b]).k; });
+      cnt.textContent=matches.length+' monstro(s) no filtro — cada grupo na sua casa abaixo: toque no título da casa para abrir ou fechar os monstros dela. Com busca ou filtro ativo, as casas abrem sozinhas.';
+    } else {
+      cnt.textContent=matches.length+' monstro(s) no filtro — lista completa, sem corte: todos os resultados aparecem de uma vez.';
     }
-    cnt.textContent=matches.length+' monstro(s) no filtro — lista completa, sem corte: todos os resultados aparecem de uma vez.';
     var sumEl=document.getElementById('classifSummary');
     if(sumEl){
       if(matches.length){
@@ -2000,18 +2015,35 @@ var ROSTER=[["Ceres",0,3,0,0,0],["Ellin",1,3,0,0,0],["Hina",2,3,0,0,0],["Lyn",3,
       } else sumEl.textContent='';
     }
     grid2.innerHTML='';
-    var lastGroup=null;
+    var filtering=q!==''||fam!==''||rosterElFilter!=='all'||rosterTypeFilter!=='all'||rosterStarsFilter!=='all'||rosterFlagFilter!=='all';
+    var lastGroup=null, curOpen=true;
     matches.forEach(function(i){
       var r=ROSTER[i];
       var g=rosterGroupOf(r);
       if(g&&g.label!==lastGroup){
         lastGroup=g.label;
-        var totalInGroup=matches.filter(function(j){ return rosterGroupOf(ROSTER[j]).label===g.label; }).length;
-        var head=document.createElement('div');
+        var gk=rosterGroup+'|'+g.k;
+        var totalInGroup=0, selInGroup=0;
+        matches.forEach(function(j){
+          var gj=rosterGroupOf(ROSTER[j]);
+          if(gj&&gj.label===g.label){
+            totalInGroup++;
+            var sj=studyIdFor(j);
+            if(selected.indexOf(sj||('r'+j))>-1) selInGroup++;
+          }
+        });
+        curOpen=rosterOpenHouses.hasOwnProperty(gk)?rosterOpenHouses[gk]:filtering;
+        var openNow=curOpen;
+        var head=document.createElement('button');
+        head.type='button';
         head.className='roster-group-head';
-        head.innerHTML=g.label+' <span>'+totalInGroup+' monstro(s) nesta classificação</span>';
+        head.setAttribute('aria-expanded', openNow?'true':'false');
+        var dot=(rosterGroup==='el')?'<span class="eldot" style="background:var(--el-'+ELKEYS[r[1]]+')" aria-hidden="true"></span>':'';
+        head.innerHTML='<span class="chev" aria-hidden="true">'+(openNow?'▾':'▸')+'</span>'+dot+g.label+' <span class="gcount">'+totalInGroup+' monstro(s)'+(selInGroup?' · '+selInGroup+' no seu time':'')+'</span><span class="gtoggle">'+(openNow?'fechar casa':'abrir casa')+'</span>';
+        head.addEventListener('click',function(){ rosterOpenHouses[gk]=!openNow; renderRoster(); });
         grid2.appendChild(head);
       }
+      if(g&&!curOpen) return;
       /* ★ e a chave do estudo só valem na entrada que É aquele mob (elemento certo):
          nomes repetidos em outros elementos entram como mob genérico próprio,
          senão eles somem do time / um remove o outro ao tocar. */
@@ -2388,11 +2420,11 @@ var ROSTER=[["Ceres",0,3,0,0,0],["Ellin",1,3,0,0,0],["Hina",2,3,0,0,0],["Lyn",3,
   wireClassif('#rosterStars','data-cstars',function(v){rosterStarsFilter=v;});
   wireClassif('#rosterFlags','data-cflag',function(v){rosterFlagFilter=v;});
   document.getElementById('rosterGroup').addEventListener('change',function(){
-    rosterGroup=this.value; rosterLimit=120; renderRoster();
+    rosterGroup=this.value; rosterLimit=120; rosterOpenHouses={}; renderRoster();
   });
   document.getElementById('classifClear').addEventListener('click',function(){
-    rosterTypeFilter='all'; rosterStarsFilter='all'; rosterFlagFilter='all'; rosterGroup='none'; rosterLimit=120;
-    document.getElementById('rosterGroup').value='none';
+    rosterTypeFilter='all'; rosterStarsFilter='all'; rosterFlagFilter='all'; rosterGroup='el'; rosterLimit=120; rosterOpenHouses={};
+    document.getElementById('rosterGroup').value='el';
     document.querySelectorAll('#classifBlock .cls-chip').forEach(function(c){
       var isAll=c.hasAttribute('data-ctype')?c.getAttribute('data-ctype')==='all':(c.hasAttribute('data-cstars')?c.getAttribute('data-cstars')==='all':c.getAttribute('data-cflag')==='all');
       c.setAttribute('aria-pressed', isAll?'true':'false');
