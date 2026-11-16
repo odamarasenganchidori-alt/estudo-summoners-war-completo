@@ -320,6 +320,9 @@ footer{margin-top:48px;border-top:1px solid var(--line);padding:28px 0 44px;colo
 .roster-main-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:0 0 8px;font-family:"Cinzel",serif;font-weight:700;font-size:1rem;color:var(--ink)}
 .roster-main-head .gcount{font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:400;font-size:.82rem;color:var(--muted)}
 .roster-main-head:empty{display:none}
+.roster-more-wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px}
+.roster-more-wrap:empty{display:none}
+.roster-more-info{font-size:.86rem;color:var(--muted)}
 @media(max-width:760px){
   .roster-layout{grid-template-columns:1fr}
   .roster-side{flex-direction:row;flex-wrap:wrap}
@@ -885,7 +888,7 @@ footer{margin-top:48px;border-top:1px solid var(--line);padding:28px 0 44px;colo
   <div class="builder" id="builder">
     <div class="roster-block">
       <h2 style="margin-top:0">Elenco completo do jogo — qualquer mob serve</h2>
-      <p class="src" style="margin-bottom:12px">Os <strong>1.046 monstros jogáveis</strong> de Summoners War (forma final: despertado — e 2º Despertar quando existe — de cada família e elemento; inclui unidades de colaboração; fora materiais e monstros de chefe/NPC), agrupados em <strong>229 famílias</strong>. Conferido nome a nome contra o bestiário nesta atualização: o único corte são os monstros de <strong>1★ e 2★ que não têm 2º Despertar</strong> (74 no total — Imp, Garuda, Slime, Fantasma e afins, que ninguém usa em comp); <strong>todos os outros estão aqui</strong>, incluindo os de 1★/2★ com 2º Despertar (Harpu, Howl, Pixie, Hellhound, Fada…). A lista vem <strong>em ordem de estrelas, agrupada por estrelas naturais com os grupos numa lista ao lado</strong> — primeiro os Nat 3★, depois os Nat 4★, depois os Nat 5★ (e os poucos Nat 2★ com 2º Despertar por último): você toca num grupo da lista lateral e vê só os monstros dele, cada um com a <strong>foto e o grupo dele</strong> no card (elemento · estrelas · família · tipo). Com <strong>busca ou qualquer filtro ativo, a lista lateral mostra só os grupos que têm resultado</strong>, com a contagem de cada um — se um mob não aparecer, é o filtro (busca, elemento, família ou classificação), não a lista. Fonte do elenco e dos retratos: bestiário do <a href="https://swarfarm.com/">SWARFARM</a>, espelho dos dados do jogo, consultado nesta atualização — cada retrato é o ícone oficial daquele monstro (elemento e forma despertada/2A conforme o elenco). E <strong>cada um desses 1.046 mobs tem a própria sinergia</strong> no painel de parceiros abaixo: o papel dele é classificado pelo <strong>tipo do monstro no jogo</strong> (Ataque / HP / Defesa / Suporte — bestiário SWARFARM) cruzado com as regras de sinergia por função, e, quando o nome dele aparece nos <strong>picks reais da Season 39</strong> (duos/trios do Lucksack, Guardian), os parceiros verificados dele aparecem primeiro, com taxa de vitória e nº de jogos. Os 42 mobs do estudo (marcados com ★) têm, além disso, função detalhada mob a mob, tier S39 por rank e os cores verificados do FooSW.</p>
+      <p class="src" style="margin-bottom:12px">Os <strong>1.046 monstros jogáveis</strong> de Summoners War (forma final: despertado — e 2º Despertar quando existe — de cada família e elemento; inclui unidades de colaboração; fora materiais e monstros de chefe/NPC), agrupados em <strong>229 famílias</strong>. Conferido nome a nome contra o bestiário nesta atualização: o único corte são os monstros de <strong>1★ e 2★ que não têm 2º Despertar</strong> (74 no total — Imp, Garuda, Slime, Fantasma e afins, que ninguém usa em comp); <strong>todos os outros estão aqui</strong>, incluindo os de 1★/2★ com 2º Despertar (Harpu, Howl, Pixie, Hellhound, Fada…). A lista vem <strong>em ordem de estrelas e de elemento, agrupada por estrelas naturais com os grupos numa lista ao lado</strong> — primeiro os Nat 3★, depois os Nat 4★, depois os Nat 5★ (e os poucos Nat 2★ com 2º Despertar por último) e, dentro de cada faixa de estrelas, os monstros vêm por elemento: Fogo, Água, Vento, Luz e Dark. Você toca num grupo da lista lateral e vê só os monstros dele, cada um com a <strong>foto e o grupo dele</strong> no card (elemento · estrelas · família · tipo). Para a lista não ficar gigante, ela mostra <strong>48 monstros por vez</strong> — o botão <strong>“Mostrar mais monstros”</strong>, no fim da lista, carrega os próximos quando você quiser ver mais. Com <strong>busca ou qualquer filtro ativo, a lista lateral mostra só os grupos que têm resultado</strong>, com a contagem de cada um — se um mob não aparecer, é o filtro (busca, elemento, família ou classificação), não a lista. Fonte do elenco e dos retratos: bestiário do <a href="https://swarfarm.com/">SWARFARM</a>, espelho dos dados do jogo, consultado nesta atualização — cada retrato é o ícone oficial daquele monstro (elemento e forma despertada/2A conforme o elenco). E <strong>cada um desses 1.046 mobs tem a própria sinergia</strong> no painel de parceiros abaixo: o papel dele é classificado pelo <strong>tipo do monstro no jogo</strong> (Ataque / HP / Defesa / Suporte — bestiário SWARFARM) cruzado com as regras de sinergia por função, e, quando o nome dele aparece nos <strong>picks reais da Season 39</strong> (duos/trios do Lucksack, Guardian), os parceiros verificados dele aparecem primeiro, com taxa de vitória e nº de jogos. Os 42 mobs do estudo (marcados com ★) têm, além disso, função detalhada mob a mob, tier S39 por rank e os cores verificados do FooSW.</p>
       <div class="roster-tools">
         <input type="search" id="rosterSearch" placeholder="Buscar no elenco completo… ex.: Lushen, Anavel, Leona" aria-label="Buscar monstro no elenco completo">
         <select id="rosterFam" aria-label="Filtrar por família"><option value="">Todas as famílias (229)</option></select>
@@ -900,7 +903,7 @@ footer{margin-top:48px;border-top:1px solid var(--line);padding:28px 0 44px;colo
       </div>
       <div class="classif-block" id="classifBlock">
         <h4 class="classif-title">Separar por classificação</h4>
-        <p class="src" style="margin:0 0 12px">Separe o elenco pelas classificações do próprio jogo: <strong>tipo</strong> do monstro (Ataque / HP / Defesa / Suporte), <strong>estrelas naturais</strong> (Nat 1★ a Nat 5★) e <strong>destaques</strong> (Luz/Dark, os cobiçados Nat 5★ LD, quem tem 2º Despertar e os ★ detalhados do estudo). Os filtros combinam entre si e com a busca, o elemento e a família acima. Por padrão, a lista já vem agrupada <strong>por estrelas naturais, em ordem: Nat 3★, depois Nat 4★, depois Nat 5★</strong> (os poucos Nat 2★ com 2º Despertar ficam por último), com os grupos numa <strong>lista ao lado</strong> do elenco: toque num grupo para ver só os monstros dele. Dentro de qualquer outro agrupamento, os mobs também aparecem nessa mesma ordem de estrelas. Com o campo <strong>“Agrupar a lista por”</strong>, dá pra trocar o agrupamento da lista lateral — por elemento (Fogo / Água / Vento / Luz / Dark) ou por tipo (todos os de Ataque juntos, depois os de HP, e assim por diante).</p>
+        <p class="src" style="margin:0 0 12px">Separe o elenco pelas classificações do próprio jogo: <strong>tipo</strong> do monstro (Ataque / HP / Defesa / Suporte), <strong>estrelas naturais</strong> (Nat 1★ a Nat 5★) e <strong>destaques</strong> (Luz/Dark, os cobiçados Nat 5★ LD, quem tem 2º Despertar e os ★ detalhados do estudo). Os filtros combinam entre si e com a busca, o elemento e a família acima. Por padrão, a lista já vem agrupada <strong>por estrelas naturais, em ordem: Nat 3★, depois Nat 4★, depois Nat 5★</strong> (os poucos Nat 2★ com 2º Despertar ficam por último) e, dentro de cada faixa de estrelas, <strong>por elemento: Fogo, Água, Vento, Luz e Dark</strong>, com os grupos numa <strong>lista ao lado</strong> do elenco: toque num grupo para ver só os monstros dele. Dentro de qualquer outro agrupamento, os mobs também aparecem nessa mesma ordem de estrelas e de elemento. A lista mostra <strong>48 monstros por vez</strong>: para ver os demais, é só tocar no botão <strong>“Mostrar mais monstros”</strong> no fim da lista. Com o campo <strong>“Agrupar a lista por”</strong>, dá pra trocar o agrupamento da lista lateral — por elemento (Fogo / Água / Vento / Luz / Dark) ou por tipo (todos os de Ataque juntos, depois os de HP, e assim por diante).</p>
         <div class="classif-row">
           <span class="classif-label" id="clsTypeLabel">Tipo do monstro</span>
           <div class="el-chips cls-chips" role="group" aria-labelledby="clsTypeLabel" id="rosterTypes">
@@ -939,7 +942,7 @@ footer{margin-top:48px;border-top:1px solid var(--line);padding:28px 0 44px;colo
               <option value="stars" selected>Estrelas naturais — Nat 3★ → Nat 4★ → Nat 5★ (Nat 2★ por último)</option>
               <option value="el">Elemento — grupos na lista ao lado (Fogo / Água / Vento / Luz / Dark)</option>
               <option value="type">Tipo — Ataque / HP / Defesa / Suporte</option>
-              <option value="none">Sem agrupamento (lista única, em ordem de estrelas)</option>
+              <option value="none">Sem agrupamento (lista única, em ordem de estrelas e de elemento)</option>
             </select>
             <button type="button" class="btn-ghost" id="classifClear">Limpar classificações</button>
           </div>
@@ -952,6 +955,7 @@ footer{margin-top:48px;border-top:1px solid var(--line);padding:28px 0 44px;colo
         <div class="roster-main">
           <p class="roster-main-head" id="rosterMainHead"></p>
           <div class="roster-grid" id="rosterGrid"></div>
+          <div class="roster-more-wrap" id="rosterMoreWrap"></div>
         </div>
       </div>
     </div>
@@ -1986,7 +1990,10 @@ var ROSTER=[["Ceres",0,3,0,0,0],["Ellin",1,3,0,0,0],["Hina",2,3,0,0,0],["Lyn",3,
   }
   var rosterElFilter='all';
   var rosterTypeFilter='all', rosterStarsFilter='all', rosterFlagFilter='all', rosterGroup='stars';
-  var rosterLimit=120;
+  /* A lista mostra poucos monstros por vez (ROSTER_PAGE); o botão
+     “Mostrar mais monstros” no fim da lista libera os próximos. */
+  var ROSTER_PAGE=48;
+  var rosterLimit=ROSTER_PAGE;
   /* Lista lateral de grupos: os grupos do recorte atual (por padrão, os
      elementos) ficam numa lista ao lado do elenco; tocar num grupo mostra só
      os monstros dele. rosterSideKey guarda o grupo aberto durante a sessão. */
@@ -1998,6 +2005,17 @@ var ROSTER=[["Ceres",0,3,0,0,0],["Ellin",1,3,0,0,0],["Hina",2,3,0,0,0],["Lyn",3,
      por último, nessa ordem. */
   var STAR_ORDER={3:0,4:1,5:2,2:3,1:4};
   function starOrd(r){ var o=STAR_ORDER[r[2]]; return o===undefined?5:o; }
+  /* Ordem dentro de qualquer grupo: primeiro as estrelas (Nat 3★ → Nat 4★ →
+     Nat 5★ → Nat 2★) e, dentro da mesma faixa de estrelas, o elemento na
+     ordem do jogo (Fogo → Água → Vento → Luz → Dark); desempate pelo nome. */
+  function rosterCmp(a,b){
+    var ra=ROSTER[a], rb=ROSTER[b];
+    var d=starOrd(ra)-starOrd(rb);
+    if(d!==0) return d;
+    d=ra[1]-rb[1];
+    if(d!==0) return d;
+    return ra[0]<rb[0]?-1:(ra[0]>rb[0]?1:0);
+  }
   function rosterGroupOf(r){
     if(rosterGroup==='type') return {k:r[4],label:'Tipo: '+ARCHNAMES[r[4]]};
     if(rosterGroup==='stars') return {k:starOrd(r),label:'Nat '+r[2]+'★ — '+r[2]+' estrelas naturais'};
@@ -2023,16 +2041,18 @@ var ROSTER=[["Ceres",0,3,0,0,0],["Ellin",1,3,0,0,0],["Hina",2,3,0,0,0],["Lyn",3,
       matches.push(i);
     });
     /* Os mobs ficam sempre em ordem de estrelas (Nat 3★ → Nat 4★ → Nat 5★,
-       Nat 2★ por último): dentro do grupo escolhido e também na lista única. */
+       Nat 2★ por último) e, dentro de cada faixa de estrelas, por elemento
+       (Fogo → Água → Vento → Luz → Dark): dentro do grupo escolhido e
+       também na lista única. */
     if(rosterGroup!=='none'){
       matches.sort(function(a,b){
         var d=rosterGroupOf(ROSTER[a]).k-rosterGroupOf(ROSTER[b]).k;
-        return d!==0?d:(starOrd(ROSTER[a])-starOrd(ROSTER[b]));
+        return d!==0?d:rosterCmp(a,b);
       });
-      cnt.textContent=matches.length+' monstro(s) no filtro, em ordem de estrelas (Nat 3★ → Nat 4★ → Nat 5★) — os grupos ficam na lista ao lado: toque num grupo para ver os monstros dele, cada um com a foto e o grupo dele no card.';
+      cnt.textContent=matches.length+' monstro(s) no filtro, em ordem de estrelas (Nat 3★ → Nat 4★ → Nat 5★) e, dentro de cada faixa, por elemento (Fogo → Água → Vento → Luz → Dark) — os grupos ficam na lista ao lado: toque num grupo para ver os monstros dele. A lista mostra '+ROSTER_PAGE+' monstros por vez; o botão “Mostrar mais monstros”, no fim da lista, carrega os próximos.';
     } else {
-      matches.sort(function(a,b){ return starOrd(ROSTER[a])-starOrd(ROSTER[b]); });
-      cnt.textContent=matches.length+' monstro(s) no filtro, em ordem de estrelas (Nat 3★ → Nat 4★ → Nat 5★) — lista completa, sem corte: todos os resultados aparecem de uma vez.';
+      matches.sort(rosterCmp);
+      cnt.textContent=matches.length+' monstro(s) no filtro, em ordem de estrelas (Nat 3★ → Nat 4★ → Nat 5★) e, dentro de cada faixa, por elemento (Fogo → Água → Vento → Luz → Dark). A lista mostra '+ROSTER_PAGE+' monstros por vez; o botão “Mostrar mais monstros”, no fim da lista, carrega os próximos.';
     }
     var sumEl=document.getElementById('classifSummary');
     if(sumEl){
@@ -2071,19 +2091,20 @@ var ROSTER=[["Ceres",0,3,0,0,0],["Ellin",1,3,0,0,0],["Hina",2,3,0,0,0],["Lyn",3,
           sb.setAttribute('aria-pressed', gr.gk===rosterSideKey?'true':'false');
           var dot=(gr.elIdx!==null&&gr.elIdx!==undefined)?'<span class="eldot" style="background:var(--el-'+ELKEYS[gr.elIdx]+')" aria-hidden="true"></span>':'';
           sb.innerHTML=dot+'<span>'+gr.label+'</span><span class="gcount">'+gr.items.length+' mob(s)'+(gr.sel?' · '+gr.sel+' no time':'')+'</span>';
-          sb.addEventListener('click',function(){ rosterSideKey=gr.gk; renderRoster(); });
+          sb.addEventListener('click',function(){ rosterSideKey=gr.gk; rosterLimit=ROSTER_PAGE; renderRoster(); });
           side.appendChild(sb);
         });
       }
     }
     var activeGroup=(rosterGroup!=='none'&&rosterSideKey)?gmap[rosterSideKey]:null;
+    var visible=activeGroup?activeGroup.items:matches;
+    var shown=Math.min(rosterLimit,visible.length);
     if(mhead){
-      if(activeGroup) mhead.innerHTML=activeGroup.label+' <span class="gcount">'+activeGroup.items.length+' monstro(s) neste grupo — toque num mob para montar o time</span>';
-      else if(matches.length) mhead.innerHTML='Todos os monstros <span class="gcount">'+matches.length+' no filtro</span>';
+      if(activeGroup) mhead.innerHTML=activeGroup.label+' <span class="gcount">mostrando '+shown+' de '+activeGroup.items.length+' monstro(s) neste grupo — toque num mob para montar o time</span>';
+      else if(matches.length) mhead.innerHTML='Todos os monstros <span class="gcount">mostrando '+shown+' de '+matches.length+' no filtro</span>';
       else mhead.innerHTML='';
     }
-    var visible=activeGroup?activeGroup.items:matches;
-    visible.forEach(function(i){
+    visible.slice(0,rosterLimit).forEach(function(i){
       var r=ROSTER[i];
       /* ★ e a chave do estudo só valem na entrada que É aquele mob (elemento certo):
          nomes repetidos em outros elementos entram como mob genérico próprio,
@@ -2100,6 +2121,26 @@ var ROSTER=[["Ceres",0,3,0,0,0],["Ellin",1,3,0,0,0],["Hina",2,3,0,0,0],["Lyn",3,
       grid2.appendChild(b);
     });
     if(!matches.length) grid2.innerHTML='<p class="src">Nenhum monstro bate com esse filtro. Limpe a busca ou troque o elemento, a família ou as classificações.</p>';
+    /* Botão “Mostrar mais monstros”: a lista abre curta (ROSTER_PAGE) e cada
+       toque libera mais um bloco, até mostrar o grupo/filtro inteiro. */
+    var moreWrap=document.getElementById('rosterMoreWrap');
+    if(moreWrap){
+      moreWrap.innerHTML='';
+      if(visible.length>shown){
+        var rest=visible.length-shown;
+        var mb=document.createElement('button');
+        mb.type='button'; mb.className='btn-ghost';
+        mb.textContent='Mostrar mais monstros ('+rest+' restante'+(rest===1?'':'s')+')';
+        mb.addEventListener('click',function(){ rosterLimit+=ROSTER_PAGE; renderRoster(); });
+        var mi=document.createElement('span'); mi.className='roster-more-info';
+        mi.textContent='Mostrando '+shown+' de '+visible.length+' monstros.';
+        moreWrap.appendChild(mb); moreWrap.appendChild(mi);
+      } else if(visible.length>ROSTER_PAGE){
+        var mi2=document.createElement('span'); mi2.className='roster-more-info';
+        mi2.textContent='Mostrando todos os '+visible.length+' monstros.';
+        moreWrap.appendChild(mi2);
+      }
+    }
   }
   var selected=[];
   var grid=document.getElementById('mobGrid'), tray=document.getElementById('synTray'),
@@ -2419,11 +2460,11 @@ var ROSTER=[["Ceres",0,3,0,0,0],["Ellin",1,3,0,0,0],["Hina",2,3,0,0,0],["Lyn",3,
   if(modeSel) modeSel.addEventListener('change',analyze);
   var famSel=document.getElementById('rosterFam');
   FAMS.forEach(function(f,i){ var o=document.createElement('option'); o.value=String(i); o.textContent=f; famSel.appendChild(o); });
-  document.getElementById('rosterSearch').addEventListener('input',function(){rosterLimit=120; renderRoster();});
-  famSel.addEventListener('change',function(){rosterLimit=120; renderRoster();});
+  document.getElementById('rosterSearch').addEventListener('input',function(){rosterLimit=ROSTER_PAGE; renderRoster();});
+  famSel.addEventListener('change',function(){rosterLimit=ROSTER_PAGE; renderRoster();});
   document.querySelectorAll('#rosterEls .el-chip').forEach(function(ch){
     ch.addEventListener('click',function(){
-      rosterElFilter=ch.getAttribute('data-el'); rosterLimit=120;
+      rosterElFilter=ch.getAttribute('data-el'); rosterLimit=ROSTER_PAGE;
       document.querySelectorAll('#rosterEls .el-chip').forEach(function(c){c.setAttribute('aria-pressed', c===ch?'true':'false');});
       renderRoster();
     });
@@ -2451,7 +2492,7 @@ var ROSTER=[["Ceres",0,3,0,0,0],["Ellin",1,3,0,0,0],["Hina",2,3,0,0,0],["Lyn",3,
   function wireClassif(groupSel,attr,setter){
     document.querySelectorAll(groupSel+' .cls-chip').forEach(function(ch){
       ch.addEventListener('click',function(){
-        setter(ch.getAttribute(attr)); rosterLimit=120;
+        setter(ch.getAttribute(attr)); rosterLimit=ROSTER_PAGE;
         document.querySelectorAll(groupSel+' .cls-chip').forEach(function(c){c.setAttribute('aria-pressed', c===ch?'true':'false');});
         renderRoster();
       });
@@ -2461,10 +2502,10 @@ var ROSTER=[["Ceres",0,3,0,0,0],["Ellin",1,3,0,0,0],["Hina",2,3,0,0,0],["Lyn",3,
   wireClassif('#rosterStars','data-cstars',function(v){rosterStarsFilter=v;});
   wireClassif('#rosterFlags','data-cflag',function(v){rosterFlagFilter=v;});
   document.getElementById('rosterGroup').addEventListener('change',function(){
-    rosterGroup=this.value; rosterLimit=120; rosterSideKey=null; renderRoster();
+    rosterGroup=this.value; rosterLimit=ROSTER_PAGE; rosterSideKey=null; renderRoster();
   });
   document.getElementById('classifClear').addEventListener('click',function(){
-    rosterTypeFilter='all'; rosterStarsFilter='all'; rosterFlagFilter='all'; rosterGroup='stars'; rosterLimit=120; rosterSideKey=null;
+    rosterTypeFilter='all'; rosterStarsFilter='all'; rosterFlagFilter='all'; rosterGroup='stars'; rosterLimit=ROSTER_PAGE; rosterSideKey=null;
     document.getElementById('rosterGroup').value='stars';
     document.querySelectorAll('#classifBlock .cls-chip').forEach(function(c){
       var isAll=c.hasAttribute('data-ctype')?c.getAttribute('data-ctype')==='all':(c.hasAttribute('data-cstars')?c.getAttribute('data-cstars')==='all':c.getAttribute('data-cflag')==='all');
